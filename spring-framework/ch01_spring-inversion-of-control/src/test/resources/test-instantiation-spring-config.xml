@@ -20,5 +20,23 @@
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
     <!-- create bean definitions to pass the tests -->
+    <bean id="vehicleThroughConstructor" class="bnymellon.training.spring.framework.model.Vehicle">
+    </bean>
+
+    <bean id="vehicleThroughStaticFactory"
+          class="bnymellon.training.spring.framework.model.VehicleFactory"
+          factory-method="getStaticVehicle"/>
+
+
+    <!-- the factory bean, which contains a method called createInstance() -->
+    <bean id="vehicleFactory" class="bnymellon.training.spring.framework.model.VehicleFactory">
+        <!-- inject any dependencies required by this locator bean -->
+    </bean>
+
+    <!-- the bean to be created via the factory bean -->
+    <bean id="vehicleThroughInstanceFactory"
+          factory-bean="vehicleFactory"
+          factory-method="getVehicle"/>
+
 
 </beans>
