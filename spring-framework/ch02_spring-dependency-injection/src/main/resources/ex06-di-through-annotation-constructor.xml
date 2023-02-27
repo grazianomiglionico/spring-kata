@@ -33,6 +33,14 @@
         <property name="type" value="oval"/>
     </bean>
 
+    <!-- Define a "orange oval" shape -->
+    <bean id="greenLine" class="bnymellon.training.spring.framework.model.ColoredShape">
+
+        <!-- note the "property" entity, it does not matter what we use: properties or constructors, here-->
+        <property name="color" value="green"/>
+        <property name="type" value="line"/>
+    </bean>
+
     <!-- INJECT the bean into the ColoredShapeHolder -->
     <bean id="constructorAnnotatedColoredShapeHolder" class="bnymellon.training.spring.framework.model.ConstructorAnnotatedColoredShapeHolder">
 

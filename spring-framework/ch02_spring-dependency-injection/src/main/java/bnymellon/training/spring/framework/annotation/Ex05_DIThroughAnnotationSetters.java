@@ -26,7 +26,7 @@ public class Ex05_DIThroughAnnotationSetters {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("ex05-di-through-annotation-setters.xml");
 
-        SetterAnnotatedColoredShapeHolder setterAnnotatedColoredShapeHolder = (SetterAnnotatedColoredShapeHolder) context.getBean("setterAnnotatedColoredShapeHolder");
+        SetterAnnotatedColoredShapeHolder setterAnnotatedColoredShapeHolder = context.getBean("setterAnnotatedColoredShapeHolder", SetterAnnotatedColoredShapeHolder.class);
 
         System.out.println(setterAnnotatedColoredShapeHolder);
     }

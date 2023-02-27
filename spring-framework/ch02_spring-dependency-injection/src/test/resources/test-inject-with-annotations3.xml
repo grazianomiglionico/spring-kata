@@ -24,4 +24,21 @@
 
 <!-- create right configuration to pass the tests -->
 
+    <context:annotation-config/>
+    <bean id="vehicle" class="bnymellon.training.spring.framework.model.Vehicle">
+        <constructor-arg name="type" value="airplane"/>
+        <constructor-arg name="year" value="2014"/>
+    </bean>
+
+    <bean id="vehicle2" class="bnymellon.training.spring.framework.model.Vehicle">
+        <constructor-arg name="type" value="car"/>
+        <constructor-arg name="year" value="2017"/>
+    </bean>
+
+    <bean id="constructorAnnotatedWithQualifierBulkVehicleOrder" class="bnymellon.training.spring.framework.model.ConstructorAnnotatedWithQualifierBulkVehicleOrder">
+        <qualifier value="vehicle"/>
+        <property name="quantity" value="7"/>
+    </bean>
+
+
 </beans>
