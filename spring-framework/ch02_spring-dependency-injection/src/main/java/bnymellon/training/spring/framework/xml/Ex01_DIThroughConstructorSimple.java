@@ -30,9 +30,8 @@ public class Ex01_DIThroughConstructorSimple {
                 new ClassPathXmlApplicationContext(
                         "ex01-di-through-constructor-simple.xml");
 
-        ColoredShapeHolder coloredShapeHolder =
-                (ColoredShapeHolder) context.getBean("coloredShapeHolder");
+        ColoredShapeHolder coloredShapeHolder = context.getBean("coloredShapeHolder",ColoredShapeHolder.class);
 
-        System.out.println(coloredShapeHolder.toString());
+        System.out.println(coloredShapeHolder);
     }
 }
